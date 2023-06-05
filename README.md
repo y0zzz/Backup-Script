@@ -12,17 +12,3 @@ This is a bash script designed to perform backups of a source directory to a tar
 
 - Bash: Ensure that Bash is installed on your system.
 - rsync: Make sure that the rsync command is available. Install it if necessary.
-
-# Usage
-
- Clone or download the script to your local machine.
- 
-Open a terminal and navigate to the directory where the script is located.
-
-Execute the script with the following command:
-
-./backupscript.sh /Users/yuzz/Documents/Devops /Users/yuzz/Documents/Devops
- 
-Replace <source_directory> with the path to the directory you want to back up and <target_directory> with the path to the directory where you want to store the backups.
-
-The script will create a timestamped backup directory within the target directory and perform the incremental backup.
