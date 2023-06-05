@@ -18,6 +18,6 @@ This is a bash script designed to perform backups of a source directory to a tar
 
 # Usage 
 
-chmod +x backupscript.sh  
+- chmod +x backupscript.sh  
 
-./backupscript.sh
+- ./backupscript.sh
