@@ -8,7 +8,7 @@ This is a bash script designed to perform backups of a source directory to a tar
 # Prerequisites
 - Bash: Ensure that Bash is installed on your system.
 - rsync: Make sure that the rsync command is available. Install it if necessary.
-#Usage
+# Usage
  Clone or download the script to your local machine.
 Open a terminal and navigate to the directory where the script is located.
 Execute the script with the following command:
