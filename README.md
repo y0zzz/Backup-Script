@@ -15,3 +15,9 @@ This is a bash script designed to perform backups of a source directory to a tar
 
 - Bash: Ensure that Bash is installed on your system.
 - rsync: Make sure that the rsync command is available. Install it if necessary.
+
+# Usage 
+
+chmod +x backupscript.sh  
+
+./backupscript.sh
