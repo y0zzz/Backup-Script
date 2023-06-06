@@ -1,23 +1,19 @@
 # Backup Script
-This is a bash script designed to perform backups of a source directory to a target directory. It supports both local and remote backups using SSH.
+This is a backup script written in Bash that allows you to create incremental backups of a source directory to a target directory, which can be either local or remote (via SSH).
 
-# Features
+# Requirements
+- Bash
 
-- Incremental Backups: The script implements incremental backups using the rsync command with the --link-dest option. This ensures that only changed or new files are copied, saving storage space and time.
+# Usage
+The script requires two arguments: the source directory and the target directory. It checks if both arguments are provided, and if not, it displays the correct usage format.
 
-- Timestamped Directories: Each backup is stored in a timestamped directory within the target directory. The name of the directory is a timestamp in the format "YYYY-MM-DD_HH-MM-SS", allowing easy organization and retrieval of backups.
+bash backupscript.sh ./ backup2
 
-- Local and Remote Backup Support: The script can handle both local and remote backups. For remote backups, provide the SSH connection details by uncommenting and updating the SSH_USER and SSH_HOST variables.
+# Functionality
 
-- Easy Usage: Simply provide the source directory and target directory as command-line arguments when executing the script.
-
-# Prerequisites
-
-- Bash: Ensure that Bash is installed on your system.
-- rsync: Make sure that the rsync command is available. Install it if necessary.
-
-# Usage 
-
-- chmod +x backupscript.sh  
-
-- ./backupscript.sh
+The script checks if the source directory exists. If it doesn't, it displays an error message and exits.
+It determines whether the target directory is local or remote by checking if it contains a colon (":"). This is useful for distinguishing between local and remote backups.
+A timestamped directory is created within the target directory using the current date and time in the format "YYYY-MM-DD_HH-MM-SS". This directory serves as the backup destination.
+The script performs an incremental backup using the rsync command. It utilizes the --link-dest option to create hard links for unchanged files, optimizing the backup process.
+If the target directory is remote, the backup is performed over SSH.
+After the backup is completed, the script displays a success message indicating whether the backup was done remotely or locally.
